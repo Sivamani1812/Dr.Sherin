@@ -99,6 +99,341 @@ document.addEventListener("DOMContentLoaded", () => {
         revealItems.forEach((item) => revealObserver.observe(item));
     }
 
+    const galleryTrack = document.getElementById("clinicGalleryTrack");
+    if (galleryTrack) {
+        const slides = Array.from(galleryTrack.querySelectorAll(".clinic-gallery-slide"));
+        const stackCards = Array.from(document.querySelectorAll(".clinic-gallery-stack .stack-card"));
+        const gallerySlider = galleryTrack.closest(".clinic-gallery-slider");
+        const prevButton = document.querySelector(".clinic-gallery-controls .prev");
+        const nextButton = document.querySelector(".clinic-gallery-controls .next");
+        const galleryReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const slideTransitionMs = galleryReducedMotion ? 0 : 1050;
+
+        let activeIndex = 0;
+        let autoPlayTimer = null;
+        let isSliding = false;
+        let slideReleaseTimer = null;
+        let stackShiftTimer = null;
+
+        const syncGallery = (nextIndex) => {
+            if (slides.length === 0 || isSliding) {
+                return;
+            }
+
+            const total = slides.length;
+            const previousMappedIndex = total - 1 - activeIndex;
+            const safeIndex = (nextIndex + total) % total;
+            activeIndex = safeIndex;
+            isSliding = true;
+
+            galleryTrack.style.transform = `translateX(-${safeIndex * 100}%)`;
+
+            slides.forEach((slide, index) => {
+                slide.classList.toggle("is-active", index === safeIndex);
+            });
+
+            const currentMappedIndex = total - 1 - safeIndex;
+            stackCards.forEach((card, index) => {
+                card.classList.remove("is-shift-out");
+                card.classList.toggle("is-current", index === currentMappedIndex);
+            });
+
+            if (stackCards.length > 0 && previousMappedIndex !== currentMappedIndex) {
+                const outgoingCard = stackCards[previousMappedIndex];
+                outgoingCard?.classList.add("is-shift-out");
+
+                if (stackShiftTimer) {
+                    clearTimeout(stackShiftTimer);
+                }
+
+                stackShiftTimer = window.setTimeout(() => {
+                    outgoingCard?.classList.remove("is-shift-out");
+                }, Math.max(300, slideTransitionMs * 0.62));
+            }
+
+            if (slideReleaseTimer) {
+                clearTimeout(slideReleaseTimer);
+            }
+
+            slideReleaseTimer = window.setTimeout(() => {
+                isSliding = false;
+            }, slideTransitionMs + 120);
+        };
+
+        const stopAutoPlay = () => {
+            if (!autoPlayTimer) {
+                return;
+            }
+
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+        };
+
+        const startAutoPlay = () => {
+            if (galleryReducedMotion || slides.length < 2) {
+                return;
+            }
+
+            stopAutoPlay();
+            autoPlayTimer = window.setInterval(() => {
+                syncGallery(activeIndex + 1);
+            }, 4200);
+        };
+
+        const goNext = () => {
+            syncGallery(activeIndex + 1);
+            startAutoPlay();
+        };
+
+        const goPrev = () => {
+            syncGallery(activeIndex - 1);
+            startAutoPlay();
+        };
+
+        prevButton?.addEventListener("click", goPrev);
+        nextButton?.addEventListener("click", goNext);
+        stackCards.forEach((card, index) => {
+            card.addEventListener("click", () => {
+                const total = slides.length;
+                syncGallery(total - 1 - index);
+                startAutoPlay();
+            });
+        });
+
+        if (gallerySlider) {
+            gallerySlider.addEventListener("mouseenter", stopAutoPlay);
+            gallerySlider.addEventListener("mouseleave", startAutoPlay);
+            gallerySlider.addEventListener("touchstart", stopAutoPlay, { passive: true });
+            gallerySlider.addEventListener("touchend", startAutoPlay);
+        }
+
+        document.addEventListener("visibilitychange", () => {
+            if (document.hidden) {
+                stopAutoPlay();
+                return;
+            }
+
+            startAutoPlay();
+        });
+
+        syncGallery(0);
+        isSliding = false;
+        startAutoPlay();
+    }
+
+    const storyTrack = document.getElementById("storyTrack");
+    if (storyTrack) {
+        const storySlides = Array.from(storyTrack.querySelectorAll(".story-slide"));
+        const storyVideos = storySlides.map((slide) => slide.querySelector(".story-video"));
+        const storyPlayButtons = storySlides.map((slide) => slide.querySelector(".story-play-btn"));
+        const storyDots = Array.from(document.querySelectorAll(".story-dot"));
+        const storyPrevButton = document.querySelector(".success-stories-controls .prev");
+        const storyNextButton = document.querySelector(".success-stories-controls .next");
+        const storyReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const storyTransitionMs = storyReducedMotion ? 0 : 780;
+        const totalStories = storySlides.length;
+
+        let activeStoryIndex = 0;
+        let storyIsSliding = false;
+        let storySlideReleaseTimer = null;
+
+        const setStoryPlayButtonState = (index, isHidden) => {
+            const button = storyPlayButtons[index];
+            if (!button) {
+                return;
+            }
+
+            button.classList.toggle("is-hidden", isHidden);
+        };
+
+        const normalizeStoryIndex = (index) => {
+            if (totalStories === 0) {
+                return 0;
+            }
+
+            return (index + totalStories) % totalStories;
+        };
+
+        const getStoryOffset = (index) => {
+            let offset = index - activeStoryIndex;
+            if (offset > totalStories / 2) {
+                offset -= totalStories;
+            }
+            if (offset < -totalStories / 2) {
+                offset += totalStories;
+            }
+            return offset;
+        };
+
+        const playStoryVideo = (index) => {
+            const video = storyVideos[index];
+            if (!video || index !== activeStoryIndex) {
+                return;
+            }
+
+            video.muted = false;
+            video.loop = false;
+            const playPromise = video.play();
+            setStoryPlayButtonState(index, true);
+
+            if (playPromise && typeof playPromise.catch === "function") {
+                playPromise.catch(() => {
+                    setStoryPlayButtonState(index, false);
+                });
+            }
+        };
+
+        const updateStoryUi = (index) => {
+            storySlides.forEach((slide, slideIndex) => {
+                slide.classList.toggle("is-active", slideIndex === index);
+            });
+
+            storyDots.forEach((dot, dotIndex) => {
+                const isCurrent = dotIndex === index;
+                dot.classList.toggle("is-active", isCurrent);
+                dot.setAttribute("aria-current", isCurrent ? "true" : "false");
+            });
+        };
+
+        const syncStoryLayout = (options = {}) => {
+            const { resetInactive = true } = options;
+            storySlides.forEach((slide, index) => {
+                const offset = getStoryOffset(index);
+                const isCenter = offset === 0;
+                const isLeft = offset === -1;
+                const isRight = offset === 1;
+                const video = storyVideos[index];
+
+                slide.classList.remove("pos-left", "pos-center", "pos-right", "is-hidden");
+
+                if (isCenter) {
+                    slide.classList.add("pos-center");
+                } else if (isLeft) {
+                    slide.classList.add("pos-left");
+                } else if (isRight) {
+                    slide.classList.add("pos-right");
+                } else {
+                    slide.classList.add("is-hidden");
+                }
+
+                if (!video) {
+                    return;
+                }
+
+                if (isCenter) {
+                    video.controls = true;
+                    video.muted = false;
+                    video.loop = false;
+
+                    if (video.paused) {
+                        setStoryPlayButtonState(index, false);
+                    }
+                    return;
+                }
+
+                video.controls = false;
+                video.muted = true;
+                video.loop = true;
+                setStoryPlayButtonState(index, true);
+
+                if (resetInactive) {
+                    video.currentTime = 0;
+                }
+
+                if (isLeft || isRight) {
+                    const previewPlay = video.play();
+                    if (previewPlay && typeof previewPlay.catch === "function") {
+                        previewPlay.catch(() => {});
+                    }
+                    return;
+                }
+
+                video.pause();
+            });
+        };
+
+        const moveToStory = (nextIndex, options = {}) => {
+            const { autoPlayCenter = false, resetInactive = true } = options;
+            if (storySlides.length === 0 || storyIsSliding) {
+                return;
+            }
+
+            activeStoryIndex = normalizeStoryIndex(nextIndex);
+            storyIsSliding = true;
+
+            updateStoryUi(activeStoryIndex);
+            syncStoryLayout({ resetInactive });
+
+            if (autoPlayCenter) {
+                window.setTimeout(() => {
+                    playStoryVideo(activeStoryIndex);
+                }, storyTransitionMs > 0 ? storyTransitionMs * 0.62 : 0);
+            }
+
+            if (storySlideReleaseTimer) {
+                clearTimeout(storySlideReleaseTimer);
+            }
+
+            storySlideReleaseTimer = window.setTimeout(() => {
+                storyIsSliding = false;
+            }, storyTransitionMs + 90);
+        };
+
+        storyPrevButton?.addEventListener("click", () => {
+            moveToStory(activeStoryIndex - 1);
+        });
+
+        storyNextButton?.addEventListener("click", () => {
+            moveToStory(activeStoryIndex + 1);
+        });
+
+        storyDots.forEach((dot, dotIndex) => {
+            dot.addEventListener("click", () => {
+                moveToStory(dotIndex);
+            });
+        });
+
+        storyPlayButtons.forEach((button, buttonIndex) => {
+            button?.addEventListener("click", () => {
+                if (buttonIndex !== activeStoryIndex) {
+                    moveToStory(buttonIndex, { autoPlayCenter: true, resetInactive: false });
+                    return;
+                }
+
+                playStoryVideo(activeStoryIndex);
+            });
+        });
+
+        storyVideos.forEach((video, videoIndex) => {
+            if (!video) {
+                return;
+            }
+
+            video.addEventListener("play", () => {
+                setStoryPlayButtonState(videoIndex, true);
+            });
+
+            video.addEventListener("pause", () => {
+                if (!video.ended && videoIndex === activeStoryIndex) {
+                    setStoryPlayButtonState(videoIndex, false);
+                }
+            });
+
+            video.addEventListener("ended", () => {
+                setStoryPlayButtonState(videoIndex, false);
+
+                if (videoIndex !== activeStoryIndex) {
+                    return;
+                }
+
+                moveToStory(activeStoryIndex + 1, { autoPlayCenter: true, resetInactive: true });
+            });
+        });
+
+        updateStoryUi(0);
+        syncStoryLayout({ resetInactive: false });
+    }
+
     const setCounterValue = (counter, value) => {
         const suffix = counter.dataset.suffix || "";
         counter.textContent = `${value}${suffix}`;
