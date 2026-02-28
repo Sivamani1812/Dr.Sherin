@@ -26,7 +26,7 @@
             <div class="nav-menu" id="navMenu">
                 <ul class="nav-links">
                     <li><a class="active" href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="about">About</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Gallery</a></li>
                     <li><a href="#">Reviews</a></li>
@@ -546,10 +546,7 @@
 
                     <a href="#" class="treatment-chain-btn reveal-on-scroll">Know more</a>
 
-                    <div class="treatment-stay-wrap reveal-on-scroll" aria-hidden="true">
-                        <span class="treatment-stay-line"></span>
-                        <span class="treatment-stay-text">Stay in place</span>
-                    </div>
+                 
                 </div>
 
                 <div class="treatment-chain-grid">
@@ -557,7 +554,7 @@
                         <article class="treatment-card reveal-on-scroll">
                             <div class="treatment-card-body">
                                 <div class="treatment-card-media">
-                                    <img src="./img/IVF.webp" alt="IVF treatment procedure" loading="lazy">
+                                    <img src="./img/IVF.webp" alt="IVF treatment procedure">
                                 </div>
                                 <h3>IVF Treatment</h3>
                                 <p>In Vitro Fertilization with advanced techniques for higher success rates</p>
@@ -567,7 +564,7 @@
                         <article class="treatment-card reveal-on-scroll">
                             <div class="treatment-card-body">
                                 <div class="treatment-card-media">
-                                    <img src="./img/IUI.webp" alt="IUI treatment process" loading="lazy">
+                                    <img src="./img/IUI.webp" alt="IUI treatment process">
                                 </div>
                                 <h3>IUI Treatment</h3>
                                 <p>Intrauterine insemination as a less invasive fertility option</p>
@@ -577,7 +574,7 @@
                         <article class="treatment-card reveal-on-scroll">
                             <div class="treatment-card-body">
                                 <div class="treatment-card-media">
-                                    <img src="./img/MF.webp" alt="Male fertility consultation" loading="lazy">
+                                    <img src="./img/MF.webp" alt="Male fertility consultation">
                                 </div>
                                 <h3>Male Fertility</h3>
                                 <p>Specialized care for male fertility problems and treatments</p>
@@ -587,7 +584,7 @@
                         <article class="treatment-card reveal-on-scroll">
                             <div class="treatment-card-body">
                                 <div class="treatment-card-media">
-                                    <img src="./img/US.webp" alt="Ultrasound services" loading="lazy">
+                                    <img src="./img/US.webp" alt="Ultrasound services">
                                 </div>
                                 <h3>Ultrasound Services</h3>
                                 <p>Advanced reproductive image and monitoring</p>
@@ -597,7 +594,7 @@
                         <article class="treatment-card reveal-on-scroll">
                             <div class="treatment-card-body">
                                 <div class="treatment-card-media">
-                                    <img src="./img/OB.webp" alt="Obstetric and maternity care" loading="lazy">
+                                    <img src="./img/OB.webp" alt="Obstetric and maternity care">
                                 </div>
                                 <h3>Obstetric &amp; Maternity Care</h3>
                                 <p>Complete pregnancy care and high risk pregnancy management</p>
@@ -609,7 +606,7 @@
                         <article class="treatment-card reveal-on-scroll">
                             <div class="treatment-card-body">
                                 <div class="treatment-card-media">
-                                    <img src="./img/ICSI.webp" alt="ICSI treatment procedure" loading="lazy">
+                                    <img src="./img/ICSI.webp" alt="ICSI treatment procedure">
                                 </div>
                                 <h3>ICSI Treatment</h3>
                                 <p>Intracytoplasmic Sperm Injection for male fertility issues</p>
@@ -619,7 +616,7 @@
                         <article class="treatment-card reveal-on-scroll">
                             <div class="treatment-card-body">
                                 <div class="treatment-card-media">
-                                    <img src="./img/FF.webp" alt="Female fertility treatment" loading="lazy">
+                                    <img src="./img/FF.webp" alt="Female fertility treatment">
                                 </div>
                                 <h3>Female Fertility</h3>
                                 <p>Comprehensive evaluation and treatment of female fertility issues.</p>
@@ -629,7 +626,7 @@
                         <article class="treatment-card reveal-on-scroll">
                             <div class="treatment-card-body">
                                 <div class="treatment-card-media">
-                                    <img src="./img/FP.webp" alt="Fertility preservation options" loading="lazy">
+                                    <img src="./img/FP.webp" alt="Fertility preservation options">
                                 </div>
                                 <h3>Fertility Preservation</h3>
                                 <p>Egg and sperm freezing for future family planning</p>
@@ -639,7 +636,7 @@
                         <article class="treatment-card reveal-on-scroll">
                             <div class="treatment-card-body">
                                 <div class="treatment-card-media">
-                                    <img src="./img/ET.webp" alt="Endoscopy treatment procedure" loading="lazy">
+                                    <img src="./img/ET.webp" alt="Endoscopy treatment procedure">
                                 </div>
                                 <h3>Endoscopy Treatment</h3>
                                 <p>Minimally invasive diagnostic and surgical procedures.</p>
@@ -732,7 +729,7 @@
                             <i class="fa-solid fa-chevron-left"></i>
                         </button>
                         <button class="gallery-nav next" type="button" aria-label="Next image">
-                            <i class="fa-solid fa-chevron-right"></i>
+                        <i class="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
                 </div>
@@ -761,27 +758,21 @@
                     <div class="story-viewport">
                         <div class="story-track" id="storyTrack">
                             <article class="story-slide is-active">
-                                <video class="story-video" playsinline preload="metadata" poster="./img/A1.jpg">
-                                    <source src="./videos/story-1.mp4" type="video/mp4">
-                                </video>
+                                <video class="story-video" playsinline preload="metadata" poster="./img/A1.jpg" data-video-placeholder="story-1.mp4"></video>
                                 <button class="story-play-btn" type="button" aria-label="Play patient story video">
                                     <i class="fa-solid fa-play"></i>
                                 </button>
                             </article>
 
                             <article class="story-slide">
-                                <video class="story-video" playsinline preload="metadata" poster="./img/A2.jpg">
-                                    <source src="./videos/story-2.mp4" type="video/mp4">
-                                </video>
+                                <video class="story-video" playsinline preload="metadata" poster="./img/A2.jpg" data-video-placeholder="story-2.mp4"></video>
                                 <button class="story-play-btn" type="button" aria-label="Play patient story video">
                                     <i class="fa-solid fa-play"></i>
                                 </button>
                             </article>
 
                             <article class="story-slide">
-                                <video class="story-video" playsinline preload="metadata" poster="./img/A3.jpg">
-                                    <source src="./videos/story-3.mp4" type="video/mp4">
-                                </video>
+                                <video class="story-video" playsinline preload="metadata" poster="./img/A3.jpg" data-video-placeholder="story-3.mp4"></video>
                                 <button class="story-play-btn" type="button" aria-label="Play patient story video">
                                     <i class="fa-solid fa-play"></i>
                                 </button>

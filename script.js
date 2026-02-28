@@ -237,6 +237,24 @@ document.addEventListener("DOMContentLoaded", () => {
         let storyIsSliding = false;
         let storySlideReleaseTimer = null;
 
+        const hasStorySource = (video) => {
+            if (!video) {
+                return false;
+            }
+
+            if (video.currentSrc && video.currentSrc.trim() !== "") {
+                return true;
+            }
+
+            const sourceNode = video.querySelector("source[src]");
+            if (!sourceNode) {
+                return false;
+            }
+
+            const srcValue = sourceNode.getAttribute("src") || "";
+            return srcValue.trim() !== "";
+        };
+
         const setStoryPlayButtonState = (index, isHidden) => {
             const button = storyPlayButtons[index];
             if (!button) {
@@ -267,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const playStoryVideo = (index) => {
             const video = storyVideos[index];
-            if (!video || index !== activeStoryIndex) {
+            if (!video || index !== activeStoryIndex || !hasStorySource(video)) {
                 return;
             }
 
@@ -341,9 +359,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 if (isLeft || isRight) {
-                    const previewPlay = video.play();
-                    if (previewPlay && typeof previewPlay.catch === "function") {
-                        previewPlay.catch(() => {});
+                    if (hasStorySource(video)) {
+                        const previewPlay = video.play();
+                        if (previewPlay && typeof previewPlay.catch === "function") {
+                            previewPlay.catch(() => {});
+                        }
                     }
                     return;
                 }
