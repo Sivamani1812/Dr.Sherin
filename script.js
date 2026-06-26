@@ -514,3 +514,167 @@ document.addEventListener("DOMContentLoaded", () => {
 
     counters.forEach((counter) => counterObserver.observe(counter));
 });
+
+
+let topBtn = document.getElementById("topBtn");
+
+window.onscroll = function(){
+  if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+    topBtn.style.display = "block";
+  } else {
+    topBtn.style.display = "none";
+  }
+}
+
+function scrollToTop(){
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+
+
+/* ============================================================
+   DR. SHERIN — HERO SECTION SCRIPT
+   Drives: scroll/load reveal animations, stat counters,
+   floating particles, and the consultation form success state.
+   Just include this file with: <script src="hero.js" defer></script>
+   ============================================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+  initRevealAnimations();
+  initStatCounters();
+  initHeroParticles();
+  initHeroForm();
+});
+
+/* ---------- 1. Fade / slide reveal on [data-anim] elements ---------- */
+function initRevealAnimations() {
+  const animEls = document.querySelectorAll("[data-anim]");
+  if (!animEls.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const delay = parseFloat(el.dataset.delay || 0) * 1000;
+          setTimeout(() => el.classList.add("anim-visible"), delay);
+          observer.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  animEls.forEach((el) => observer.observe(el));
+}
+
+/* ---------- 2. Animated stat counters (500+, 8+, 90%) ---------- */
+function initStatCounters() {
+  const counters = document.querySelectorAll(".hero-stat-num[data-count]");
+  if (!counters.length) return;
+
+  const animateCount = (el) => {
+    const target = parseInt(el.dataset.count, 10) || 0;
+    const duration = 1500;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(tick);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  counters.forEach((el) => observer.observe(el));
+}
+
+/* ---------- 3. Floating particles inside #heroParticles ---------- */
+function initHeroParticles() {
+  const container = document.getElementById("heroParticles");
+  if (!container) return;
+
+  const PARTICLE_COUNT = 22;
+
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    const p = document.createElement("span");
+    p.className = "particle";
+
+    const size = (Math.random() * 5 + 3).toFixed(1); // 3px - 8px
+    const top = (Math.random() * 100).toFixed(1);
+    const left = (Math.random() * 100).toFixed(1);
+    const tx = (Math.random() * 80 - 40).toFixed(0) + "px";
+    const ty = (-(Math.random() * 100 + 30)).toFixed(0) + "px";
+    const dur = (Math.random() * 6 + 6).toFixed(1) + "s";
+    const delay = (Math.random() * 5).toFixed(1) + "s";
+
+    p.style.width = size + "px";
+    p.style.height = size + "px";
+    p.style.top = top + "%";
+    p.style.left = left + "%";
+    p.style.setProperty("--tx", tx);
+    p.style.setProperty("--ty", ty);
+    p.style.setProperty("--dur", dur);
+    p.style.setProperty("--delay", delay);
+
+    container.appendChild(p);
+  }
+}
+
+/* ---------- 4. Consultation form submit -> success state ---------- */
+function initHeroForm() {
+  const form = document.getElementById("heroConsultForm");
+  const card = document.querySelector(".hero-form-card");
+  if (!form || !card) return;
+
+  // Build the success markup once (kept out of the HTML so this
+  // script stays fully drop-in). Uses the .hero-form-success* CSS
+  // that already exists in your stylesheet.
+  let successBlock = card.querySelector(".hero-form-success");
+  if (!successBlock) {
+    successBlock = document.createElement("div");
+    successBlock.className = "hero-form-success";
+    successBlock.innerHTML = `
+      <span class="hero-form-success-icon">
+        <i class="fa-solid fa-check" aria-hidden="true"></i>
+      </span>
+      <h4>Thank You!</h4>
+      <p>Your consultation request has been received.<br>
+      Our team will call you shortly to confirm your appointment.</p>
+    `;
+    card.appendChild(successBlock);
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    // TODO: send the form data to your backend / API / Google Sheet here
+    // const data = new FormData(form);
+    // fetch("/api/consult", { method: "POST", body: data });
+
+    card.classList.add("form-success");
+    form.reset();
+  });
+}

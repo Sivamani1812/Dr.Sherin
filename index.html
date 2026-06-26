@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr.Sherin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="top-header">
         <nav class="navbar">
@@ -17,7 +21,8 @@
                 <img src="./img/Logo.webp" alt="Dr.Sherin Almash logo">
             </a>
 
-            <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+            <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="navMenu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -26,33 +31,31 @@
             <div class="nav-menu" id="navMenu">
                 <ul class="nav-links">
                     <li><a class="active" href="#">Home</a></li>
-                    <li><a href="about">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Reviews</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#advanced-treatments">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact-us">Contact</a></li>
                 </ul>
 
-                <button class="appointment-btn" type="button">Book Appointment</button>
+                <button class="appointment-btn" type="button"><a href="#contact-us">Book Appointment</a></button>
             </div>
         </nav>
     </header>
 
-    <section class="hero-section" id="hero">
+    <!-- <section class="hero-section" id="hero">
         <div class="hero-bubbles" id="heroBubbles" aria-hidden="true"></div>
 
         <div class="hero-grid">
             <div class="hero-card">
-                <h2>Lorem</h2>
+                <h2>Your Path to Parenthood Starts Here</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua.
+                    Specialized fertility care built around you — not just your diagnosis.
                 </p>
 
-                <div class="hero-card-field">Lorem ipsum lorem</div>
-                <div class="hero-card-field">Lorem ipsum lorem</div>
-                <div class="hero-card-field short">Lorem ipsum</div>
+                <div class="hero-card-field">Treatments Made for You</div>
+                <div class="hero-card-field">Latest Fertility Technology</div>
+                <div class="hero-card-field ">Care Without Judgment</div>
             </div>
 
             <div class="hero-copy">
@@ -67,56 +70,226 @@
             </div>
         </div>
 
-        <img class="doctor-image" src="./img/d1.png" alt="Doctor portrait">
+        <img class="doctor-image" src="./img/Sherindoc3 (2).png" alt="Doctor portrait">
 
         <p class="hero-note">
-            Lorem Ipsum is simply dummy text of the printing and
-            Lorem Ipsum has been the industry's standard dummy
-            when an unknown printer took a galley of type and .
+            Hundreds of Chennai families have walked in with worry and left with hope. Dr. Sherin makes even the hardest
+            days feel manageable.
+
         </p>
 
         <div class="hero-title-lockup">
-            <span class="hero-title-top"><span class="top-text">The Best Medical</span></span>
-            <span class="hero-title-bottom">and Treatment Center for You</span>
+            <span class="hero-title-top"><span class="top-text">The Best Gynecologist</span></span>
+            <span class="hero-title-bottom">& Fertility Specialist For You in Chennai</span>
         </div>
-    </section>
+    </section> -->
+
+   <section id="hero" class="hero-section">
+
+  <div class="hero-bg-blobs" aria-hidden="true">
+    <span class="blob blob-1"> </span>
+    <span class="blob blob-2"> </span>
+    <span class="blob blob-3"> </span>
+  </div>
+
+  <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
+ 
+  <div class="hero-container">
+
+    <div class="hero-left">
+
+      <div class="hero-badge" data-anim="fade-down">
+        <span class="hero-badge-dot"></span>
+        Fertility Specialist &amp; Gynecologist, Chennai
+      </div>
+ 
+      <h1 class="hero-heading" data-anim="fade-up">
+        Dr. Sherin<br />
+        <em class="hero-heading-em">Almash</em>
+      </h1>
+
+      <p class="hero-tagline" data-anim="fade-up" data-delay="0.15">
+        Fertility, gynecology, pregnancy and women's health care with calm guidance,
+        advanced treatment, and genuine warmth.
+      </p>
+
+      <div class="hero-care-row" data-anim="fade-up" data-delay="0.2" aria-label="Specialist care areas">
+        <span><i class="fa-solid fa-seedling" aria-hidden="true"></i> IVF / IUI / ICSI</span>
+        <span><i class="fa-solid fa-baby" aria-hidden="true"></i> Pregnancy Care</span>
+        <span><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Women's Health</span>
+      </div>
+
+      <!-- Stats row -->
+      <div class="hero-stats" data-anim="fade-up" data-delay="0.25">
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-count="500">0</span><span class="hero-stat-suf">+</span>
+          <span class="hero-stat-label">Happy Couples</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-count="8">0</span><span class="hero-stat-suf">+</span>
+          <span class="hero-stat-label">Years Experience</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-count="90">0</span><span class="hero-stat-suf">%</span>
+          <span class="hero-stat-label">Success Rate</span>
+        </div>
+      </div>
+ 
+      <!-- CTA Buttons -->
+      <div class="hero-actions" data-anim="fade-up" data-delay="0.35">
+        <a href="#contact-us" class="hero-btn hero-btn-primary">
+          <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+          Book Consultation
+        </a>
+        <a href="tel:+917200176328" class="hero-btn hero-btn-outline">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          Call Now
+        </a>
+      </div>
+ 
+      
+
+     
+
+    </div><!-- /.hero-left -->
+
+    <!-- CENTER: Doctor image block -->
+    <div class="hero-doctor-wrap" data-anim="fade-up" data-delay="0.1">
+      <div class="hero-doctor-glow" aria-hidden="true"></div>
+      <img src="./img/dr-2.png"
+        alt="Dr. Sherin Almash - Fertility Specialist"
+        class="hero-doctor-img" />
+       
+      <div class="hero-float-pill pill-1" aria-hidden="true">
+        <i class="fa-solid fa-heart-pulse"></i> Gentle fertility care
+      </div>
+      <div class="hero-float-pill pill-2" aria-hidden="true">
+      <i class="fa-solid fa-star"></i> 5.0 Google Rating
+      </div>
+      <div class="hero-float-pill pill-3" aria-hidden="true">
+      <i class="fa-solid fa-baby"></i> 60+ Babies / Year
+      </div> 
+    </div>
+ 
+    <!-- RIGHT: Consultation form card -->
+    <div class="hero-right" data-anim="fade-left" data-delay="0.2">
+ 
+      <div class="hero-form-card">
+        <div class="hero-form-top">
+          <span class="hero-form-icon"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></span>
+          <div>
+            <h3 class="hero-form-title">Book Fertility Consultation</h3>
+            <p class="hero-form-sub">Free first assessment &amp; expert advice</p>
+          </div>
+        </div>
+ 
+        <form class="hero-form" id="heroConsultForm" novalidate>
+ 
+          <div class="hero-field">
+            <label for="hf-name"><i class="fa-regular fa-user" aria-hidden="true"></i> Full Name</label>
+            <input type="text" id="hf-name" name="name" placeholder="Your full name" required />
+          </div>
+ 
+          <div class="hero-field">
+            <label for="hf-phone"><i class="fa-solid fa-phone" aria-hidden="true"></i> Phone Number</label>
+            <input type="tel" id="hf-phone" name="phone" placeholder="+91 XXXXX XXXXX" required />
+          </div>
+ 
+          <div class="hero-field">
+            <label for="hf-clinic"><i class="fa-solid fa-hospital" aria-hidden="true"></i> Preferred Clinic</label>
+            <select id="hf-clinic" name="clinic" required>
+              <option value="">Select Your Nearest Clinic</option>
+              <option value="sherins-clinic">Sherin Clinic, Valasaravakkam</option>
+              <option value="cloudnine">CloudNine Hospital</option>
+              <option value="kauvery">Kauvery Hospital, Vadapalani</option>
+              <option value="online">Audio / Video Consultation</option>
+            </select>
+          </div>
+ 
+          <div class="hero-field">
+            <label for="hf-concern"><i class="fa-regular fa-comment-dots" aria-hidden="true"></i> Your Concern</label>
+            <select id="hf-concern" name="concern">
+              <option value="">Select a concern (optional)</option>
+              <option value="ivf">IVF / ICSI Treatment</option>
+              <option value="iui">IUI Treatment</option>
+              <option value="pcos">PCOS / Hormonal Imbalance</option>
+              <option value="pregnancy">Pregnancy / Maternity Care</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+ 
+          <button type="submit" class="hero-form-submit">
+            Confirm My Consultation
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+ 
+          <p class="hero-form-note">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+            Your details are 100% confidential and secure.
+          </p>
+ 
+        </form>
+ 
+        <!-- Trust badges -->
+        <div class="hero-trust-row">
+          <span class="hero-trust-badge">
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Verified Doctor
+          </span>
+          <span class="hero-trust-badge">
+            <i class="fa-brands fa-google" aria-hidden="true"></i> 5★ Rated
+          </span>
+          <span class="hero-trust-badge">
+            <i class="fa-solid fa-award" aria-hidden="true"></i> 8+ Years
+          </span>
+        </div>
+ 
+      </div><!-- /.hero-form-card -->
+ 
+    </div><!-- /.hero-right -->
+ 
+  </div><!-- /.hero-container -->
+ 
+</section>
 
     <section class="about-section" id="about">
         <div class="about-layout">
             <figure class="about-image-wrap">
-                <img src="./img/about.png" alt="Hospital room interior" class="about-image">
+                <img src="./img/about-img-new.png" alt="Modern fertility clinic interior" class="about-image">
             </figure>
 
             <div class="about-content">
                 <h2 class="about-title">
-                    About Our Center Mind<span>Care</span>
+                    <span>Dr. Sherin's</span> Fertility Clinic & Women's Center
+
                 </h2>
 
                 <p class="about-text">
-                    Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying
-                    out print, graphic or web designs. The passage is attributed to an unknown
-                    typesetter in the 15th century who is thought to have scrambled parts of
-                    "Cicero's De Finibus Bonorum et Malorum" for use in a type specimen book. It usually
-                    begins with: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    The purpose of lorem ipsum is to create a natural looking block of text
-                    (sentence, paragraph, page, etc.) that does not distract from the layout.
-                </p>
+                   Dr. Sherin's Fertility Clinic & Women's Center was founded on a simple belief — every woman deserves
+                    world-class care delivered with warmth, honesty, and respect. Located in the heart of Chennai, our
+                    clinic is designed to feel less like a hospital and more like a place where you feel genuinely
+                    heard.We combine the most advanced fertility diagnostics and treatment technology with a team that
+                    truly understands what couples go through on this journey. Whether you are just starting to explore
+                    your options or have been trying for years, we meet you exactly where you are — without judgment,
+                    without rushing, and without false promises.
+                    Our goal is straightforward: to give every patient the best possible chance at the outcome they are
+                    hoping for.</p>
 
                 <div class="about-stats">
-                    <article class="about-stat is-active">
-                        <h3>600</h3>
-                        <p>Lorem ipsum dolor amet, consectetur adi</p>
+                    <article class="about-stat">
+                        <h3>300+</h3>
+                        <p>Fertility Consultations Completed</p>
                     </article>
 
                     <article class="about-stat">
-                        <h3>30</h3>
-                        <p>Lorem ipsum dolor amet, consectetur adi</p>
+                        <h3>15+</h3>
+                        <p>Successful Procedures Every Month</p>
                     </article>
 
                     <article class="about-stat">
-                        <h3>60</h3>
-                        <p>Lorem ipsum dolor amet, consectetur adi</p>
+                        <h3>60+</h3>
+                        <p>Babies Born Every Year</p>
                     </article>
                 </div>
             </div>
@@ -135,7 +308,7 @@
 
             <div class="expertise-layout">
                 <figure class="expertise-image-wrap reveal-on-scroll">
-                    <img src="./img/S3.png" alt="Doctor portrait" class="expertise-image">
+                    <img src="./img/img-1.JPG" alt="Doctor portrait" class="expertise-image">
                 </figure>
 
                 <div class="expertise-content reveal-on-scroll">
@@ -158,8 +331,8 @@
                     </p>
 
                     <div class="expertise-actions">
-                        <a href="#" class="expertise-btn primary">Book Consultation</a>
-                        <a href="#" class="expertise-btn outline">Call now</a>
+                        <a href="#contact-us" class="expertise-btn primary">Book Consultation</a>
+                        <a href="tel:+917200176328" class="expertise-btn outline">Call now</a>
                     </div>
                 </div>
             </div>
@@ -229,7 +402,8 @@
                                 <h4>Clinical Experience</h4>
                                 <p>
                                     Gained extensive experience through significant roles at
-                                    <strong>Apollo Hospitals</strong>, <strong>Public Health Centre West Mambalam</strong>,
+                                    <strong>Apollo Hospitals</strong>, <strong>Public Health Centre West
+                                        Mambalam</strong>,
                                     and <strong>Sri Ramachandra Medical College</strong>.
                                 </p>
                             </div>
@@ -260,7 +434,7 @@
                 </div>
 
                 <figure class="journey-media reveal-on-scroll">
-                    <img src="./img/S3.png" alt="Dr. Sherin profile" class="journey-image">
+                    <img src="./img/Sherin doc 4.jpg.jpeg" alt="Dr. Sherin profile" class="journey-image">
                 </figure>
             </div>
         </div>
@@ -272,9 +446,10 @@
                 <div class="training-intro reveal-on-scroll">
                     <h2>Advanced Training &amp; Specialization</h2>
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        Dr. Sherin has pursued relentless, international-level training to ensure her patients receive
+                        care that meets the highest global standards. Her qualifications are not just credentials — they
+                        are the result of genuine dedication to her craft and her patients.
+
                     </p>
                     <a href="#" class="training-cta">Know more</a>
                 </div>
@@ -307,7 +482,8 @@
                     <span class="training-card-icon" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></span>
                     <h3>Fellowship in Reproductive Medicine</h3>
                     <p>
-                        <strong>Completed in Bangalore,</strong> specializing in helping women through their fertility journeys
+                        <strong>Completed in Bangalore,</strong> specializing in helping women through their fertility
+                        journeys
                     </p>
                 </article>
 
@@ -364,64 +540,16 @@
             </div>
         </div>
 
+
+        <!-- -->
+
         <div class="doctor-showcase">
             <div class="doctor-details reveal-on-scroll">
-                <h3>Dr.Shakila Banu</h3>
-                <p class="degree">MBBS, DGO</p>
-                <p class="role">Senior Gynaecologist</p>
-                <p class="experience">25+ years of expertise in natural birth</p>
-
-                <div class="details-block">
-                    <h4>Consultation Timing :</h4>
-                    <p class="timing"><span><i class="fa-regular fa-clock"></i></span>Morning 10:30 AM to 1:00 PM</p>
-                </div>
-
-                <div class="details-block">
-                    <h4>Specializations :</h4>
-                    <ul>
-                        <li>Natural Birth &amp; Delivery</li>
-                        <li>High - Risk Pregnancy Management</li>
-                        <li>Gynecological Care</li>
-                    </ul>
-                </div>
-
-                <div class="doctor-actions">
-                    <a href="#" class="btn-pink">Get in touch <span><i class="fa-solid fa-arrow-right-long"></i></span></a>
-                    <a href="#" class="btn-outline-dark">See More <span><i class="fa-solid fa-arrow-right-long"></i></span></a>
-                </div>
-            </div>
-
-            <div class="doctor-visual reveal-on-scroll">
-                <div class="doctor-back-shape"></div>
-                <img src="./img/d2.png" alt="Dr. Shakila Banu" class="doctor-main-image">
-
-                <div class="doctor-info-strips">
-                    <div class="info-strip active"><span><i class="fa-solid fa-circle-check"></i></span>Lorem ipsum lorem ipsum</div>
-                    <div class="info-strip"><span><i class="fa-solid fa-circle-dot"></i></span>Lorem ipsum lorem ipsum</div>
-                    <div class="info-strip"><span><i class="fa-solid fa-circle-dot"></i></span>Lorem ipsum lorem ipsum</div>
-                </div>
-
-                <article class="mini-profile-card">
-                    <img src="./img/d3.png" alt="Dr. Shakila Banu profile thumbnail">
-                    <h5>Dr. Shakila banu</h5>
-                    <p>Senior Gynaecologist</p>
-                    <a href="#">Book Consultation</a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="consultation-section" id="consultation">
-        <div class="consultation-shell">
-            <header class="consultation-header reveal-on-scroll">
-                <h2>Dr.Sherin Almash</h2>
-                <p class="consult-qual">MBBS, MS.OG. DNB DRM (GERMANY), FMAS, FRM.</p>
-                <p class="consult-role">Fertility Specialist, Laproscopic surgeon</p>
-            </header>
-
-            <div class="consultation-layout">
-                <div class="consultation-timings">
-                    <h3 class="reveal-on-scroll">Consultation Timing :</h3>
+                <h3>Dr.Sherin Almash</h3>
+                <p class="degree">MS.OG, DNB(OBG), DRM(GERMANY), FMAS, FRM</p>
+                <p class="role">Fertility Specialist, Normal Delivery& Highrisk pregnancy Expert Laproscopic surgeon</p>
+                <p class="experience">8+ years of expertise in natural birth</p>
+                <h3 class="consult-title reveal-on-scroll">Consultation Timing :</h3>
 
                     <article class="consult-item reveal-on-scroll">
                         <h4>Dr.Sherin's Clinic</h4>
@@ -443,42 +571,169 @@
                         <h4>Kauvery Hospital - Vadapalani</h4>
                         <p class="consult-time"><span><i class="fa-regular fa-clock"></i></span>3.00 PM - 5:00 PM</p>
                     </article>
+
+                <div class="doctor-actions">
+                    <a href="#" class="btn-pink">Get in touch <span><i
+                                class="fa-solid fa-arrow-right-long"></i></span></a>
+                    <a href="#" class="btn-outline-dark">See More <span><i
+                                class="fa-solid fa-arrow-right-long"></i></span></a>
+                </div>
+            </div>
+
+            <div class="doctor-visual reveal-on-scroll">
+                <div class="doctor-back-shape"></div>
+                <img src="./img/dr-13.png" alt="Dr. Shakila Banu" class="doctor-main-image">
+
+                <div class="doctor-info-strips">
+                    <div class="info-strip active"><span><i class="fa-solid fa-circle-check"></i></span>8+ Years of
+                        Delivering Babies</div>
+                    <div class="info-strip active"><span><i class="fa-solid fa-circle-check"></i></span>Thousands of Mothers Trust Her</div>
+                    <div class="info-strip active"><span><i class="fa-solid fa-circle-check"></i></span>Safe & Natural Births, Always</div>
+                </div>
+
+                <article class="mini-profile-card">
+                    <img src="./img/img-3.JPG" alt="Dr. Shakila Banu profile thumbnail">
+                    <h5>Dr. Sherin Almash</h5>
+                    <p>Fertility Specialist</p>
+                    <a href="#contact-us">Book Consultation</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="consultation-section" id="consultation">
+        <div class="consultation-shell">
+            <div class="consultation-layout">
+                <div class="consultation-timings">
+                    <div class="consultation-profile reveal-on-scroll">
+                        <h2>Dr.Shakila Banu</h2>
+                        <p class="consult-qual">MBBS, DGO</p>
+                        <p class="consult-role">Senior Gynaecologist</p>
+                        <p class="consult-experience">25+ years of expertise in natural birth</p>
+                    </div>
+
+                    <div class="consult-box-stack">
+                        <article class="consult-info-box reveal-on-scroll">
+                            <h4><span class="consult-dot"><i class="fa-regular fa-clock"></i></span>Consultation
+                                Timing :</h4>
+                            <p class="timing">Morning 10:30 AM to 1:00 PM</p>
+                        </article>
+
+                        <article class="consult-info-box reveal-on-scroll">
+                            <h4><span class="consult-dot"><i class="fa-solid fa-stethoscope"></i></span>Specializations
+                                :</h4>
+                            <ul class="consult-spec-list">
+                                <li>Natural Birth &amp; Delivery</li>
+                                <li>High - Risk Pregnancy Management</li>
+                                <li>Gynecological Care</li>
+                            </ul>
+                        </article>
+                    </div>
                 </div>
 
                 <figure class="consultation-figure reveal-on-scroll">
-                    <img src="./img/d4.png" alt="Dr. Sherin standing portrait" class="consultation-doc-image">
+                    <img src="./img/d2.png" alt="Dr. Sherin standing portrait" class="consultation-doc-image">
                 </figure>
             </div>
         </div>
     </section>
 
-    <section class="comprehensive-section" id="comprehensive-services">
-        <div class="comprehensive-shell">
-            <h2 class="comprehensive-title reveal-on-scroll">Comprehensive Service :</h2>
+    <section id="comprehensive-services" class="service-benefits-shell">
+        <header class="service-premium-header reveal-on-scroll">
+            <!-- <p class="service-premium-kicker">Complete Care Programs</p> -->
+            <h2>Our Services</h2>
+          
+        </header>
 
-            <div class="comprehensive-media reveal-on-scroll"></div>
+        <div class="service-premium-layout">
+            <div class="service-column service-column-left">
+                <article class="service-premium-card reveal-on-scroll">
+                    <h3>Pregnanacy / Maternity</h3>
+                    <ul class="service-sub-list">
+                        <li>Natural Vaginal Birthing</li>
+                        <li>VBAC (Vaginal Birth After C-Section)</li>
+                        <li>Recurrent Abortions / Pregnancy Loss Management</li>
+                    </ul>
+                </article>
 
-            <div class="comprehensive-list-grid">
-                <ul class="comprehensive-list reveal-on-scroll">
-                    <li><span><i class="fa-solid fa-check"></i></span>General Wellness and Emergencies</li>
-                    <li><span><i class="fa-solid fa-check"></i></span>Pre-pregnancy counseling and care</li>
-                    <li><span><i class="fa-solid fa-check"></i></span>Pregnancy check-ups, fetal monitoring &amp; labor care</li>
-                    <li><span><i class="fa-solid fa-check"></i></span>Delivery</li>
-                    <li><span><i class="fa-solid fa-check"></i></span>Contraception</li>
-                    <li><span><i class="fa-solid fa-check"></i></span>Infertility counseling</li>
-                </ul>
+                <!-- ========= -->
+                <article class="service-premium-card reveal-on-scroll">
+                    <h3>Laparoscopic Surgeries</h3>
+                    <ul class="service-sub-list">
+                        <li>Laparoscopic Uterus Removal</li>
+                        <li>Fibroid &amp; Ovarian Cyst Removal</li>
+                        <li>Endometriosis Clearance Surgery</li>
+                        <li>Ectopic Pregnancy</li>
+                        <li>Diagnostic Laparoscopy for Infertility</li>
+                        <li>Adhesiolysis for Pelvic Pain</li>
+                    </ul>
+                </article>
+             
 
-                <ul class="comprehensive-list reveal-on-scroll">
-                    <li><span><i class="fa-solid fa-check"></i></span>Irregular cycles and fibroids</li>
-                    <li><span><i class="fa-solid fa-check"></i></span>Adolescent Health and PCOS</li>
-                    <li><span><i class="fa-solid fa-check"></i></span>Post-pregnancy care and lactation counseling</li>
-                    <li><span><i class="fa-solid fa-check"></i></span>Cancer screening and follow-up</li>
-                    <li><span><i class="fa-solid fa-check"></i></span>Menopause</li>
-                    <li><span><i class="fa-solid fa-check"></i></span>Vaccinations</li>
-                </ul>
+                <article class="service-premium-card reveal-on-scroll">
+                    <h3>Gynecologic Care</h3>
+                    <ul class="service-sub-list">
+                        <li>Menstrual Disorders (Irregular / Heavy Bleeding)</li>
+                        <li>PCOS / PCOD Management</li>
+                        <li>Cervical Cancer Screening (Pap Smear)</li>
+                        <li>Menopause &amp; PMS Care</li>
+                        <li>Vaginal Infections &amp; STD Screening</li>
+                    </ul>
+                </article>
+            </div>
+
+            <figure class="service-center-visual reveal-on-scroll">
+                <span class="service-medical-ring"></span>
+                <div class="service-side-stack side-left" aria-hidden="true">
+                    <span class="service-medical-badge"><i class="fa-solid fa-heart-pulse"></i></span>
+                    <span class="service-medical-badge"><i class="fa-solid fa-stethoscope"></i></span>
+                </div>
+                <div class="service-side-stack side-right" aria-hidden="true">
+                    <span class="service-medical-badge"><i class="fa-solid fa-notes-medical"></i></span>
+                    <span class="service-medical-badge"><i class="fa-solid fa-syringe"></i></span>
+                </div>
+                <img src="./img/PNG 1.png" alt="Dr. Sherin Almash" class="service-center-image">
+            </figure>
+
+            <div class="service-column service-column-right">
+                   <article class="service-premium-card reveal-on-scroll">
+                    <h3>Fertility &amp; Hormonal Imbalance</h3>
+                    <ul class="service-sub-list">
+                        <li>Infertility Evaluation</li>
+                        <li>IVF &amp; IUI @ Affordable Individual Packages</li>
+                        <li>Thyroid &amp; Hormonal Imbalance Management</li>
+                    </ul>
+                </article>
+
+                
+
+                <article class="service-premium-card reveal-on-scroll">
+                    <h3>Cosmetic Surgeries</h3>
+                    <ul class="service-sub-list">
+                        <li>Vaginal Tightening</li>
+                        <li>Orgasm Shots (O Shot, G Shot)</li>
+                        <li>Labial Correction (Labiaplasty)</li>
+                        <li>Post-Delivery Vaginal Restoration</li>
+                        <li>Vaginal Rejuvenation Treatment</li>
+                    </ul>
+                </article>
+
+                <article class="service-premium-card reveal-on-scroll">
+                    <h3>General Wellness &amp; Preventive Care</h3>
+                    <ul class="service-sub-list">
+                        <li>Pre-pregnancy Counseling and Care</li>
+                        <li>Pregnancy Check-ups, Fetal Monitoring &amp; Labor Care</li>
+                        <li>Delivery &amp; Post-pregnancy Lactation Counseling</li>
+                        <li>Contraception Planning and Follow-up</li>
+                        <li>Vaccinations and Routine Wellness Support</li>
+                    </ul>
+                </article>
             </div>
         </div>
     </section>
+
+
+
 
     <section class="why-choose-section" id="why-choose">
         <div class="why-choose-shell">
@@ -541,12 +796,12 @@
                     </p>
 
                     <figure class="treatment-doctor reveal-on-scroll">
-                        <img src="./img/d1.png" alt="Doctor portrait for treatment section">
+                        <img src="./img/Sherindoc6 (2).png" alt="Doctor portrait for treatment section">
                     </figure>
 
                     <a href="#" class="treatment-chain-btn reveal-on-scroll">Know more</a>
 
-                 
+
                 </div>
 
                 <div class="treatment-chain-grid">
@@ -574,7 +829,7 @@
                         <article class="treatment-card reveal-on-scroll">
                             <div class="treatment-card-body">
                                 <div class="treatment-card-media">
-                                    <img src="./img/MF.webp" alt="Male fertility consultation">
+                                    <img src="./img/male.jpg" alt="Male fertility consultation">
                                 </div>
                                 <h3>Male Fertility</h3>
                                 <p>Specialized care for male fertility problems and treatments</p>
@@ -594,7 +849,7 @@
                         <article class="treatment-card reveal-on-scroll">
                             <div class="treatment-card-body">
                                 <div class="treatment-card-media">
-                                    <img src="./img/OB.webp" alt="Obstetric and maternity care">
+                                    <img src="./img/fertility.jpg" alt="Obstetric and maternity care">
                                 </div>
                                 <h3>Obstetric &amp; Maternity Care</h3>
                                 <p>Complete pregnancy care and high risk pregnancy management</p>
@@ -616,7 +871,7 @@
                         <article class="treatment-card reveal-on-scroll">
                             <div class="treatment-card-body">
                                 <div class="treatment-card-media">
-                                    <img src="./img/FF.webp" alt="Female fertility treatment">
+                                    <img src="./img/female.jpg" alt="Female fertility treatment">
                                 </div>
                                 <h3>Female Fertility</h3>
                                 <p>Comprehensive evaluation and treatment of female fertility issues.</p>
@@ -712,12 +967,12 @@
                             <figure class="clinic-gallery-slide">
                                 <img src="./img/p-12.jpg" alt="Clinic gallery image 12">
                             </figure>
-                            <figure class="clinic-gallery-slide">
+                            <!-- <figure class="clinic-gallery-slide">
                                 <img src="./img/p-13.webp" alt="Clinic gallery image 13">
-                            </figure>
-                            <figure class="clinic-gallery-slide">
-                                <img src="./img/p-14.webp" alt="Clinic gallery image 14">
-                            </figure>
+                            </figure> -->
+                            <!-- <figure class="clinic-gallery-slide">
+                                <img src="./img/p-14.11.jpg" alt="Clinic gallery image 14">
+                            </figure> -->
                             <figure class="clinic-gallery-slide">
                                 <img src="./img/p-15.webp" alt="Clinic gallery image 15">
                             </figure>
@@ -729,7 +984,7 @@
                             <i class="fa-solid fa-chevron-left"></i>
                         </button>
                         <button class="gallery-nav next" type="button" aria-label="Next image">
-                        <i class="fa-solid fa-chevron-right"></i>
+                            <i class="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
                 </div>
@@ -757,23 +1012,74 @@
                 <div class="success-stories-stage">
                     <div class="story-viewport">
                         <div class="story-track" id="storyTrack">
+
                             <article class="story-slide is-active">
-                                <video class="story-video" playsinline preload="metadata" poster="./img/A1.jpg" data-video-placeholder="story-1.mp4"></video>
-                                <button class="story-play-btn" type="button" aria-label="Play patient story video">
+                                <video class="story-video" playsinline preload="metadata"
+                                    poster="./img/thumb-testimonial.png">
+                                    <source src="./videos/Testimonial.mp4" type="video/mp4">
+                                </video>
+
+                                <button class="story-play-btn" type="button">
                                     <i class="fa-solid fa-play"></i>
                                 </button>
                             </article>
 
-                            <article class="story-slide">
-                                <video class="story-video" playsinline preload="metadata" poster="./img/A2.jpg" data-video-placeholder="story-2.mp4"></video>
-                                <button class="story-play-btn" type="button" aria-label="Play patient story video">
+
+                            <article class="story-slide is-active">
+                                <video class="story-video" playsinline preload="metadata"
+                                    poster="./img/thumb-treatment.png">
+                                    <source src="./videos/Untitled design.mp4" type="video/mp4">
+                                </video>
+
+                                <button class="story-play-btn" type="button">
                                     <i class="fa-solid fa-play"></i>
                                 </button>
                             </article>
 
-                            <article class="story-slide">
-                                <video class="story-video" playsinline preload="metadata" poster="./img/A3.jpg" data-video-placeholder="story-3.mp4"></video>
-                                <button class="story-play-btn" type="button" aria-label="Play patient story video">
+
+                            <article class="story-slide is-active">
+                                <video class="story-video" playsinline preload="metadata"
+                                    poster="./img/thumb-success-couple.png">
+                                    <source src="./videos/WhatsApp Video 2025-06-23 at 5.44.44 PM.mp4" type="video/mp4">
+                                </video>
+
+                                <button class="story-play-btn" type="button">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </article>
+
+                            <article class="story-slide is-active">
+                                <video class="story-video" playsinline preload="metadata"
+                                    poster="./img/thumb-newborn-care.png">
+                                    <source src="./videos/WhatsApp Video 2025-06-26 at 10.12.29 PM.mp4"
+                                        type="video/mp4">
+                                </video>
+
+                                <button class="story-play-btn" type="button">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </article>
+
+                            <article class="story-slide is-active">
+                                <video class="story-video" playsinline preload="metadata"
+                                    poster="./img/thumb-clinic-journey.png">
+                                    <source src="./videos/0310.mp4"
+                                        type="video/mp4">
+                                </video>
+
+                                <button class="story-play-btn" type="button">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </article>
+
+                             <article class="story-slide is-active">
+                                <video class="story-video" playsinline preload="metadata"
+                                    poster="./img/thumb-doctor-advice.png">
+                                    <source src="./videos/drsherinsgynofertility_1765977197_3789613588148367279_75544873411.mp4"
+                                        type="video/mp4">
+                                </video>
+
+                                <button class="story-play-btn" type="button">
                                     <i class="fa-solid fa-play"></i>
                                 </button>
                             </article>
@@ -786,9 +1092,18 @@
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
                     <div class="story-dots" role="tablist" aria-label="Patient story slides">
-                        <button class="story-dot is-active" type="button" role="tab" aria-current="true" aria-label="Go to story 1"></button>
-                        <button class="story-dot" type="button" role="tab" aria-current="false" aria-label="Go to story 2"></button>
-                        <button class="story-dot" type="button" role="tab" aria-current="false" aria-label="Go to story 3"></button>
+                        <button class="story-dot is-active" type="button" role="tab" aria-current="true"
+                            aria-label="Go to story 1"></button>
+                        <button class="story-dot" type="button" role="tab" aria-current="false"
+                            aria-label="Go to story 2"></button>
+                        <button class="story-dot" type="button" role="tab" aria-current="false"
+                            aria-label="Go to story 3"></button>
+                            <button class="story-dot" type="button" role="tab" aria-current="false"
+                            aria-label="Go to story 3"></button>
+                            <button class="story-dot" type="button" role="tab" aria-current="false"
+                            aria-label="Go to story 3"></button>
+                            <button class="story-dot" type="button" role="tab" aria-current="false"
+                            aria-label="Go to story 3"></button>
                     </div>
                     <button class="story-nav next" type="button" aria-label="Next story">
                         <i class="fa-solid fa-chevron-right"></i>
@@ -797,6 +1112,10 @@
             </div>
         </div>
     </section>
+
+
+
+
 
     <section class="testimonial-wall-section" id="testimonials">
         <div class="testimonial-wall-shell">
@@ -811,59 +1130,70 @@
             </header>
 
             <div class="testimonial-wall-grid">
+
                 <article class="testimonial-card card-quote reveal-on-scroll">
+                    <div class="review-avatar float-avatar">M</div>
                     <h3>Malathi Ponraj</h3>
                     <p>
-                       I would like to express my heartfelt gratitude to Dr. Sherin for the exceptional care and support. Your professionalism, patience, and empathetic approach made me feel completely at ease throughout the entire process
+                        I would like to express my heartfelt gratitude to Dr. Sherin for the exceptional care and
+                        support. Your professionalism, patience, and empathetic approach made me feel completely at ease
+                        throughout the entire process
                     </p>
-
-                    <div class="testimonial-mini-avatars" aria-hidden="true">
-                        <img src="./img/text-4.png" alt="">
-                        <img src="./img/d3.png" alt="">
-                        <img src="./img/text-4.png" alt="">
-                    </div>
                 </article>
 
                 <article class="testimonial-card card-main reveal-on-scroll">
-                    <img src="./img/test-2.png" alt="Patient portrait">
-                    <p> Doctor is having good knowledge, kind behaviour and patience in hearing and replying to the patient's queries. Even for her regular patient, sometimes she gives generous advises compromising her fees. We need to follow her medicines and instructions for better results. It was appreciable when she conducted dietician advises for free of cost. Dr. Sherin spends enormous time in clarifying all her patient's doubts, this shows her importance towards patient's health.
-
-
-
-
+                    <div class="review-avatar">S</div>
+                    <h3>Shalini Anand Kumar</h3>
+                    <p> Doctor is having good knowledge, kind behaviour and patience in hearing and replying to the
+                        patient's queries. Even for her regular patient, sometimes she gives generous advises
+                        compromising her fees. We need to follow her medicines and instructions for better results. It
+                        was appreciable when she conducted dietician advises for free of cost. Dr. Sherin spends
+                        enormous time in clarifying all her patient's doubts, this shows her importance towards
+                        patient's health.
                     </p>
+                   
                 </article>
 
                 <article class="testimonial-card card-right-top reveal-on-scroll">
-                    <img src="./img/test-1.png" alt="Patient avatar" class="float-avatar">
+                    <div class="review-avatar float-avatar">R</div>
+                  
+                   <h3>Razia Sulthana Vazir Khan</h3>
                     <p>
-I recently had laparoscopic surgery performed by Dr. Sherin and I'm more grateful for the care I received from the day 1 of consultation till the post follow up. Dr Sherin was professional, patient and explained all process step by step. The surgery was smooth and recovery was so quick with minimal pain. The entire team was kind and supportive.
-
-
-                       
+                        I recently had laparoscopic surgery performed by Dr. Sherin and I'm more grateful for the care I
+                        received from the day 1 of consultation till the post follow up. Dr Sherin was professional,
+                        patient and explained all process step by step. The surgery was smooth and recovery was so quick
+                        with minimal pain. The entire team was kind and supportive.
                     </p>
                 </article>
 
                 <article class="testimonial-card card-left-bottom reveal-on-scroll">
-                    <p>Dr. Sherin explained each process of the treatment and cleared all doubts. Overall happy and satisfied. The service is excellent and really helpful in making the right choice.
-                    </p>
-                    <img src="./img/test-3.png" alt="Patient smiling">
+                    <div class="review-avatar">P</div>
+                    <div class="review-copy">
+                        <h3>Priya Saravana</h3>
+                        <p>Dr. Sherin explained each process of the treatment and cleared all doubts. Overall happy and
+                            satisfied. The service is excellent and really helpful in making the right choice.
+                        </p>
+                    </div>
                 </article>
 
                 <article class="testimonial-card card-right-bottom reveal-on-scroll">
-                    <img src="./img/d3.png" alt="Patient portrait">
-                    <p>
-                       
+                    <div class="review-avatar">G</div>
+                    <div class="review-copy">
+                        <h3>Gulzar Begum</h3>
+                        <p>
+                            Dr. Sherin is an exceptional gynecologist who truly listens to her patients and makes them feel
+                            comfortable. Her dedication to patient care is remarkable. Highly recommended!
+                        </p>
+                    </div>
 
-                       Dr. Sherin is an exceptional gynecologist who truly listens to her patients and makes them feel comfortable. Her dedication to patient care is remarkable. Highly recommended!
-
-
-
-                    </p>
                 </article>
             </div>
         </div>
     </section>
+
+
+
+
 
     <section class="contact-panel-section" id="contact-us">
         <div class="contact-panel-shell">
@@ -880,12 +1210,13 @@ I recently had laparoscopic surgery performed by Dr. Sherin and I'm more gratefu
                     <h3>Audio &amp; Video Consultations Available</h3>
 
                     <ul class="contact-feature-list">
-                        <li><span><i class="fa-solid fa-desktop"></i></span>Convenient online consultation from the comfortable of your home.</li>
+                        <li><span><i class="fa-solid fa-desktop"></i></span>Convenient online consultation from the
+                            comfortable of your home.</li>
                         <li><span><i class="fa-brands fa-whatsapp"></i></span>Whatsapp : +91-9345804275</li>
                         <li><span><i class="fa-regular fa-clock"></i></span>Flexible timing to suit your schedule</li>
                     </ul>
 
-                    <a class="contact-whatsapp-btn" href="#">
+                    <a class="contact-whatsapp-btn" href="https://wa.me/917200176328" target="_blank">
                         <span><i class="fa-brands fa-whatsapp"></i></span>WhatsApp for Consultation
                     </a>
                 </article>
@@ -907,7 +1238,8 @@ I recently had laparoscopic surgery performed by Dr. Sherin and I'm more gratefu
                     <h3>Sherin Clinic, Valasaravakkam</h3>
 
                     <ul class="clinic-detail-list">
-                        <li><span><i class="fa-solid fa-location-dot"></i></span>Near Porur, Alwathirunagar, Valasaravakkam, Chennai.</li>
+                        <li><span><i class="fa-solid fa-location-dot"></i></span>Near Porur, Alwathirunagar,
+                            Valasaravakkam, Chennai.</li>
                         <li><span><i class="fa-solid fa-phone-volume"></i></span>+91-7200176328</li>
                         <li><span><i class="fa-solid fa-envelope"></i></span>contactdrsherin@gmail.com</li>
                         <li><span><i class="fa-regular fa-clock"></i></span>Mon, Wed, Thu, Fri : 6:30 PM - 10:00 PM</li>
@@ -920,7 +1252,8 @@ I recently had laparoscopic surgery performed by Dr. Sherin and I'm more gratefu
                     <h3>CloudNine Hospital</h3>
 
                     <ul class="clinic-detail-list">
-                        <li><span><i class="fa-solid fa-location-dot"></i></span>Near Porur, Alwathirunagar, Valasaravakkam, Chennai.</li>
+                        <li><span><i class="fa-solid fa-location-dot"></i></span>Near Porur, Alwathirunagar,
+                            Valasaravakkam, Chennai.</li>
                         <li><span><i class="fa-solid fa-phone-volume"></i></span>+91-8754400965</li>
                         <li><span><i class="fa-regular fa-clock"></i></span>Sunday Morning : 10:30 AM - 12:30 PM</li>
                     </ul>
@@ -933,7 +1266,8 @@ I recently had laparoscopic surgery performed by Dr. Sherin and I'm more gratefu
                     <ul class="clinic-detail-list">
                         <li><span><i class="fa-solid fa-location-dot"></i></span>Anna Nagar, Chennai.</li>
                         <li><span><i class="fa-solid fa-phone-volume"></i></span>+91-7200176328</li>
-                        <li><span><i class="fa-regular fa-clock"></i></span>Tuesday &amp; Saturday : 6:30 AM - 8:30 PM</li>
+                        <li><span><i class="fa-regular fa-clock"></i></span>Tuesday &amp; Saturday : 6:30 AM - 8:30 PM
+                        </li>
                     </ul>
                 </article>
 
@@ -955,8 +1289,8 @@ I recently had laparoscopic surgery performed by Dr. Sherin and I'm more gratefu
             <div class="site-footer-grid">
                 <article class="footer-col footer-about reveal-on-scroll">
                     <div class="footer-brand">
-                        <img src="./img/footer-Logo.png" alt="Dr.Sherin Almash logo" class="footer-logo">
-                        
+                        <img src="./img/footer-Logo (2).png" alt="Dr.Sherin Almash logo" class="footer-logo">
+
                     </div>
                     <h3>Dr.Sherin Almash</h3>
                     <p>
@@ -992,20 +1326,51 @@ I recently had laparoscopic surgery performed by Dr. Sherin and I'm more gratefu
                 <article class="footer-col reveal-on-scroll">
                     <h3>Contact Info</h3>
                     <ul class="footer-contact-list">
-                        <li><span><i class="fa-solid fa-phone-volume"></i></span><a href="tel:+917200176328">+91-7200176328</a></li>
-                        <li><span><i class="fa-solid fa-envelope"></i></span><a href="mailto:contactdrsherin@gmail.com">contactdrsherin@gmail.com</a></li>
+                        <li><span><i class="fa-solid fa-phone-volume"></i></span><a
+                                href="tel:+917200176328">+91-7200176328</a></li>
+                        <li><span><i class="fa-solid fa-envelope"></i></span><a
+                                href="mailto:contactdrsherin@gmail.com">contactdrsherin@gmail.com</a></li>
                         <li><span><i class="fa-solid fa-location-dot"></i></span><span>Chennai, Tamilnadu</span></li>
+                        <li class="footer-social-row">
+                            <span aria-hidden="true"></span>
+                            <div class="footer-social-icons">
+                                <a href="https://wa.me/917200176328" target="_blank" rel="noopener noreferrer"
+                                    aria-label="WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <a href="https://www.instagram.com/drsherinsgynofertility/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="https://www.youtube.com/@dr.sheringynofertility" target="_blank" rel="noopener noreferrer"
+                                    aria-label="YouTube">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                                <a href="https://www.facebook.com/profile.php?id=61578597657023#" target="_blank" rel="noopener noreferrer"
+                                    aria-label="FaceBook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                            </div>
+                        </li>
                     </ul>
                 </article>
             </div>
 
-            <div class="site-footer-bottom reveal-on-scroll">
+            <div class="site-footer-bottom ">
                 <p>2026 Dr.Sherin Almash. All rights reserved.</p>
                 <p>Best Fertility Doctor in Chennai | Fertility Specialist</p>
             </div>
         </div>
     </footer>
 
+    <a href="https://wa.me/917200176328" class="whatsapp-float" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="50">
+    </a>
+
+    <button id="topBtn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+
+
     <script src="script.js"></script>
 </body>
+
 </html>
