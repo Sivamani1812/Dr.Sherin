@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+.treatment-chain-section {
+    width: 100%;
+    margin: 0px auto 90px;
+}
+
+.treatment-chain-shell {
+    border-radius: 22px;
+    background: #d2e0db;
+    padding: 26px 20px 34px;
+}
+
+.treatment-chain-layout {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.92fr) minmax(560px, 1.08fr);
+    gap: 26px;
+    align-items: start;
+}
+
+
+.treatment-chain-layout {
+    align-items: start;  /* already iruku but ensure */
+}
+
+.treatment-chain-intro {
+    position: sticky;
+    top: 40px;
+    align-self: start;
+    height: max-content;
+}
+.treatment-chain-intro h2 {
+    color: #f22f81;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 6vw, 50px);
+    font-weight: 700;
+    line-height: 1.08;
+}
+
+.treatment-chain-intro p {
+    margin-top: 15px;
+    color: #677172;
+    font-size: clamp(20px, 1.2vw, 20px);
+    font-weight: 500;
+    line-height: 1.36;
+}
+.treatment-doctor img {
+    width: min(100%, 290px);
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.treatment-doctor img {
+    animation: floatDoc 4s ease-in-out infinite;
+}
+
+@keyframes floatDoc {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.treatment-chain-btn {
+    margin: 12px auto 0;
+    min-width: 310px;
+    border-radius: 28px;
+    background: #f32f82;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(24px, 1.7vw, 24px);
+    font-weight: 600;
+    line-height: 1;
+    padding: 14px 20px;
+    display: inline-flex;
+    justify-content: center;
+    box-shadow: 0 12px 18px rgba(243, 47, 130, 0.26);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.treatment-chain-btn:hover {
+    transform: translateY(-4px);
+    background-color:#2f64b0 ;
+    box-shadow: 0 16px 22px rgba(99, 47, 243, 0.3);
+}
+
+.treatment-stay-wrap {
+    margin-top: 34px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.treatment-stay-line {
+    position: relative;
+    width: 2px;
+    height: 400px;
+    background: #161616;
+}
+
+.treatment-stay-line::after {
+    content: "\f063";
+    position: absolute;
+    left: 50%;
+    bottom: -24px;
+    transform: translateX(-50%);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #161616;
+    font-size: 32px;
+}
+
+.treatment-stay-text {
+    margin-top: 22px;
+    color: #111112;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(56px, 3vw, 68px);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.treatment-chain-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.treatment-column {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: 20px;
+    padding: 2px 6px;
+}
+
+.treatment-column::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(95, 111, 108, 0.16) 0%, rgba(95, 111, 108, 0.26) 50%, rgba(95, 111, 108, 0.1) 100%);
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.treatment-column-right {
+    margin-top: 72px;
+}
+
+.treatment-card {
+    width: 100%;
+    max-width: 280px;
+    position: relative;
+    z-index: 1;
+}
+
+.treatment-card-body {
+    border-radius: 30px;
+    background: #bdcbc6;
+    min-height: 332px;
+    padding: 18px 18px 22px;
+    text-align: center;
+    box-shadow: 0 8px 18px rgba(90, 106, 103, 0.16);
+    transform-origin: 50% -70px;
+    animation: chainCardSwing 4s ease-in-out infinite;
+    transition: box-shadow 0.25s ease;
+}
+
+.treatment-card-body:hover {
+    box-shadow: 0 14px 24px rgba(90, 106, 103, 0.24);
+}
+
+.treatment-card-media {
+    width: 100%;
+    height: 142px;
+    border-radius: 30px;
+    background: #9ba7a3;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.treatment-card-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.treatment-card h3 {
+    color: #101111;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(24px, 1.2vw, 30px);
+    font-weight: 600;
+    line-height: 1.14;
+}
+
+.treatment-card p {
+    margin-top: 12px;
+    color: #5d6768;
+    font-size: clamp(18px, 1.12vw, 18px);
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.treatment-column-left .treatment-card:nth-child(2) .treatment-card-body,
+.treatment-column-left .treatment-card:nth-child(4) .treatment-card-body,
+.treatment-column-right .treatment-card:nth-child(1) .treatment-card-body,
+.treatment-column-right .treatment-card:nth-child(3) .treatment-card-body {
+    animation-duration: 11.5s;
+    animation-direction: reverse;
+}
+
+.treatment-column-left .treatment-card:nth-child(3) .treatment-card-body,
+.treatment-column-right .treatment-card:nth-child(2) .treatment-card-body,
+.treatment-column-right .treatment-card:nth-child(4) .treatment-card-body {
+    animation-delay: -2.2s;
+}
+
+@keyframes chainCardSwing {
+    0% {
+        transform: translateY(0) rotate(-1.2deg);
+    }
+
+    25% {
+        transform: translateY(-8px) rotate(1.15deg);
+    }
+
+    50% {
+        transform: translateY(0) rotate(1.25deg);
+    }
+
+    75% {
+        transform: translateY(8px) rotate(-1deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-1.2deg);
+    }
+}
+
+
+@media (max-width: 980px) {
+    .treatment-chain-section {
+        overflow: hidden;
+        width: calc(100% - 24px);
+        margin: 14px auto 34px;
+    }
+
+    .treatment-chain-shell {
+        border-radius: 16px;
+        padding: 18px 12px 22px;
+    }
+
+    .treatment-chain-layout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .treatment-chain-intro h2 {
+        font-size: clamp(40px, 10.6vw, 60px);
+        text-align: center;
+    }
+
+    .treatment-chain-intro p {
+        margin-top: 18px;
+        font-size: clamp(20px, 2vw, 20px);
+        text-align: justify;
+    }
+
+    .treatment-doctor img {
+        width: min(100%, 310px);
+    }
+
+    .treatment-chain-btn {
+        min-width: 100%;
+        width: min(100%, 320px);
+        font-size: clamp(32px, 4vw, 24px);
+        padding: 12px 10px;
+        border-radius: 10px;
+        justify-content: center;
+        margin-bottom: 18px;
+    }
+
+    .treatment-stay-wrap {
+        margin-top: 30px;
+        gap: 28px;
+    }
+
+    .treatment-stay-line {
+        height: 200px;
+    }
+
+    .treatment-stay-line::after {
+        font-size: 22px;
+        bottom: -18px;
+    }
+
+    .treatment-stay-text {
+        margin-top: 12px;
+        font-size: clamp(36px, 8.2vw, 46px);
+    }
+
+    .treatment-chain-grid {
+        margin-top: 4px;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .treatment-column,
+    .treatment-column-right {
+        margin-top: 0;
+        gap: 18px;
+    }
+
+    .treatment-column::before {
+        left: 16px;
+        transform: none;
+        width: 1px;
+        top: 10px;
+        bottom: 10px;
+    }
+
+    .treatment-card {
+        max-width: none;
+        width: 100%;
+        padding-left: 18px;
+    }
+
+    .treatment-card-body {
+        min-height: 0;
+        border-radius: 22px;
+        padding: 14px 12px 16px;
+        transform-origin: 14px -32px;
+    }
+
+    .treatment-card-media {
+        height: 96px;
+        border-radius: 22px;
+        margin-bottom: 10px;
+    }
+
+    .treatment-card h3 {
+        font-size: clamp(22px, 3vw, 30px);
+    }
+
+    .treatment-card p {
+        margin-top: 8px;
+        font-size: clamp(18px, 2.5vw, 22px);
+    }
+}
+
+@media (min-width: 981px) and (max-width: 1200px) {
+    .treatment-chain-shell {
+        padding: 24px 14px 28px;
+    }
+
+    .treatment-chain-layout {
+        grid-template-columns: minmax(260px, 0.86fr) minmax(460px, 1.14fr);
+        gap: 16px;
+    }
+
+    .treatment-chain-btn {
+        min-width: 260px;
+        font-size: clamp(40px, 2.4vw, 50px);
+        padding: 16px 28px;
+    }
+
+    .treatment-stay-line {
+        height: 260px;
+    }
+
+    .treatment-column-right {
+        margin-top: 56px;
+    }
+
+    .treatment-card {
+        max-width: 246px;
+    }
+
+    .treatment-card-body {
+        min-height: 282px;
+        border-radius: 24px;
+        padding: 14px 12px 18px;
+    }
+
+    .treatment-card-media {
+        height: 78px;
+        border-radius: 22px;
+    }
+}
+    </style>
+</head>
+<body>
+    <section class="treatment-chain-section" id="advanced-treatments">
+        <div class="treatment-chain-shell">
+            <div class="treatment-chain-layout">
+                <div class="treatment-chain-intro">
+                    <h2 class="reveal-on-scroll">Our Advanced Fertility Treatments</h2>
+                    <p class="reveal-on-scroll">
+                        Comprehensive fertility service designed to help you
+                        achieve your dream of parenthood.
+                    </p>
+
+                    <figure class="treatment-doctor reveal-on-scroll">
+                        <img src="./img/d1.png" alt="Doctor portrait for treatment section">
+                    </figure>
+
+                    <a href="#" class="treatment-chain-btn reveal-on-scroll">Know more</a>
+
+                 
+                </div>
+
+                <div class="treatment-chain-grid">
+                    <div class="treatment-column treatment-column-left">
+                        <article class="treatment-card reveal-on-scroll">
+                            <div class="treatment-card-body">
+                                <div class="treatment-card-media">
+                                    <img src="./img/IVF.webp" alt="IVF treatment procedure">
+                                </div>
+                                <h3>IVF Treatment</h3>
+                                <p>In Vitro Fertilization with advanced techniques for higher success rates</p>
+                            </div>
+                        </article>
+
+                        <article class="treatment-card reveal-on-scroll">
+                            <div class="treatment-card-body">
+                                <div class="treatment-card-media">
+                                    <img src="./img/IUI.webp" alt="IUI treatment process">
+                                </div>
+                                <h3>IUI Treatment</h3>
+                                <p>Intrauterine insemination as a less invasive fertility option</p>
+                            </div>
+                        </article>
+
+                        <article class="treatment-card reveal-on-scroll">
+                            <div class="treatment-card-body">
+                                <div class="treatment-card-media">
+                                    <img src="./img/MF.webp" alt="Male fertility consultation">
+                                </div>
+                                <h3>Male Fertility</h3>
+                                <p>Specialized care for male fertility problems and treatments</p>
+                            </div>
+                        </article>
+
+                        <article class="treatment-card reveal-on-scroll">
+                            <div class="treatment-card-body">
+                                <div class="treatment-card-media">
+                                    <img src="./img/US.webp" alt="Ultrasound services">
+                                </div>
+                                <h3>Ultrasound Services</h3>
+                                <p>Advanced reproductive image and monitoring</p>
+                            </div>
+                        </article>
+
+                        <article class="treatment-card reveal-on-scroll">
+                            <div class="treatment-card-body">
+                                <div class="treatment-card-media">
+                                    <img src="./img/OB.webp" alt="Obstetric and maternity care">
+                                </div>
+                                <h3>Obstetric &amp; Maternity Care</h3>
+                                <p>Complete pregnancy care and high risk pregnancy management</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="treatment-column treatment-column-right">
+                        <article class="treatment-card reveal-on-scroll">
+                            <div class="treatment-card-body">
+                                <div class="treatment-card-media">
+                                    <img src="./img/ICSI.webp" alt="ICSI treatment procedure">
+                                </div>
+                                <h3>ICSI Treatment</h3>
+                                <p>Intracytoplasmic Sperm Injection for male fertility issues</p>
+                            </div>
+                        </article>
+
+                        <article class="treatment-card reveal-on-scroll">
+                            <div class="treatment-card-body">
+                                <div class="treatment-card-media">
+                                    <img src="./img/FF.webp" alt="Female fertility treatment">
+                                </div>
+                                <h3>Female Fertility</h3>
+                                <p>Comprehensive evaluation and treatment of female fertility issues.</p>
+                            </div>
+                        </article>
+
+                        <article class="treatment-card reveal-on-scroll">
+                            <div class="treatment-card-body">
+                                <div class="treatment-card-media">
+                                    <img src="./img/FP.webp" alt="Fertility preservation options">
+                                </div>
+                                <h3>Fertility Preservation</h3>
+                                <p>Egg and sperm freezing for future family planning</p>
+                            </div>
+                        </article>
+
+                        <article class="treatment-card reveal-on-scroll">
+                            <div class="treatment-card-body">
+                                <div class="treatment-card-media">
+                                    <img src="./img/ET.webp" alt="Endoscopy treatment procedure">
+                                </div>
+                                <h3>Endoscopy Treatment</h3>
+                                <p>Minimally invasive diagnostic and surgical procedures.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script></script>
+</body>
+</html>
