@@ -5813,6 +5813,35 @@ body {
     resize: vertical;
 }
 
+.contact-form-submit {
+    min-height: 54px;
+    border: 0;
+    border-radius: 20px;
+    background: #ffffff;
+    color: #26599d;
+    font-family: var(--font-body);
+    font-size: 17px;
+    font-weight: 800;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.contact-form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(14, 39, 80, 0.22);
+}
+
+.contact-form-submit:disabled,
+.hero-form-submit:disabled {
+    cursor: wait;
+    opacity: 0.68;
+    transform: none;
+}
+
 .contact-clinic-card {
     text-align: left;
 }

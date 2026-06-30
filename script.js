@@ -627,8 +627,69 @@ function initHeroParticles() {
   }
 }
 
-/* ---------- 4. Consultation form submit -> success state ---------- */
+/* ---------- 4. Consultation forms submit -> FormSubmit email ---------- */
 function initHeroForm() {
+  const forms = [
+    {
+      form: document.getElementById("heroConsultForm"),
+      card: document.querySelector(".hero-form-card"),
+      successClass: "form-success"
+    },
+    {
+      form: document.getElementById("contactConsultForm")
+    }
+  ];
+
+  forms.forEach(({ form, card, successClass }) => {
+    if (!form) return;
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalButtonHtml = submitButton?.innerHTML;
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.innerHTML = 'Submitting...';
+      }
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error("Form submission failed");
+        }
+
+        form.reset();
+
+        if (card && successClass) {
+          card.classList.add(successClass);
+        } else {
+          alert("Consultation request submitted successfully!");
+        }
+      } catch (error) {
+        alert("Something went wrong. Please try again.");
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.innerHTML = originalButtonHtml;
+        }
+      }
+    });
+  });
+
   const form = document.getElementById("heroConsultForm");
   const card = document.querySelector(".hero-form-card");
   if (!form || !card) return;
@@ -650,20 +711,4 @@ function initHeroForm() {
     `;
     card.appendChild(successBlock);
   }
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    // TODO: send the form data to your backend / API / Google Sheet here
-    // const data = new FormData(form);
-    // fetch("/api/consult", { method: "POST", body: data });
-
-    card.classList.add("form-success");
-    form.reset();
-  });
 }

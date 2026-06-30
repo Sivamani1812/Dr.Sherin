@@ -185,7 +185,11 @@
           </div>
         </div>
  
-        <form class="hero-form" id="heroConsultForm" novalidate>
+        <form class="hero-form" id="heroConsultForm" action="https://formsubmit.co/contactdrsherin@gmail.com" method="POST" novalidate>
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_subject" value="New Fertility Consultation Request">
+          <input type="hidden" name="form_name" value="Hero Consultation Form">
  
           <div class="hero-field">
             <label for="hf-name"><i class="fa-regular fa-user" aria-hidden="true"></i> Full Name</label>
@@ -203,6 +207,7 @@
               <option value="">Select Your Nearest Clinic</option>
               <option value="sherins-clinic">Sherin Clinic, Valasaravakkam</option>
               <option value="cloudnine">CloudNine Hospital</option>
+              <option value="apollo">Apollo Fertility, Anna Nagar</option>
               <option value="kauvery">Kauvery Hospital, Vadapalani</option>
               <option value="online">Audio / Video Consultation</option>
             </select>
@@ -549,7 +554,7 @@
                 <p class="degree">MS.OG, DNB(OBG), DRM(GERMANY), FMAS, FRM</p>
                 <p class="role">Fertility Specialist, Normal Delivery& Highrisk pregnancy Expert Laproscopic surgeon</p>
                 <p class="experience">8+ years of expertise in natural birth</p>
-                <h3 class="consult-title reveal-on-scroll">Consultation Timing :</h3>
+                <h3 class="consult-title reveal-on-scroll">Also can get consultations at :</h3>
 
                     <article class="consult-item reveal-on-scroll">
                         <h4>Dr.Sherin's Clinic</h4>
@@ -557,7 +562,7 @@
                         <p class="consult-note">( Prior Appointment Required )</p>
                     </article>
 
-                    <article class="consult-item reveal-on-scroll">
+                    <!-- <article class="consult-item reveal-on-scroll">
                         <h4>MR Hospitals - Aminjikarai</h4>
                         <p class="consult-time"><span><i class="fa-regular fa-clock"></i></span>4.00 PM - 5:00 PM</p>
                     </article>
@@ -565,7 +570,7 @@
                     <article class="consult-item reveal-on-scroll">
                         <h4>RMD Hopitals - Kilpauk</h4>
                         <p class="consult-note">On Appointment Basis</p>
-                    </article>
+                    </article> -->
 
                     <article class="consult-item reveal-on-scroll">
                         <h4>Kauvery Hospital - Vadapalani</h4>
@@ -796,7 +801,7 @@
                     </p>
 
                     <figure class="treatment-doctor reveal-on-scroll">
-                        <img src="./img/Sherindoc6 (2).png" alt="Doctor portrait for treatment section">
+                        <img src="./img/dr-11.png" alt="Doctor portrait for treatment section">
                     </figure>
 
                     <a href="#" class="treatment-chain-btn reveal-on-scroll">Know more</a>
@@ -1226,12 +1231,20 @@
                 <article class="contact-box contact-box-blue contact-box-form reveal-on-scroll">
                     <h3>Book Your Consultation</h3>
 
-                    <form class="contact-form" action="#" method="post">
-                        <input type="text" name="name" placeholder="Your full name">
+                    <form class="contact-form" id="contactConsultForm" action="https://formsubmit.co/contactdrsherin@gmail.com" method="POST" novalidate>
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="New Website Consultation Request">
+                        <input type="hidden" name="form_name" value="Contact Consultation Form">
+                        <input type="text" name="name" placeholder="Your full name" required>
                         <input type="email" name="email" placeholder="Your mail">
-                        <input type="tel" name="phone" placeholder="Your phone number">
+                        <input type="tel" name="phone" placeholder="Your phone number" required>
                         <input type="text" name="clinic" placeholder="Select preferred clinic">
                         <textarea name="message" rows="4" placeholder="Message"></textarea>
+                        <button type="submit" class="contact-form-submit">
+                            Submit Consultation
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </button>
                     </form>
                 </article>
 
